@@ -288,6 +288,57 @@
         .contact-info a:hover {
             text-decoration: underline;
         }
+        #about {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(15, 15, 15, 0.8), rgba(214, 207, 207, 0) 90%);
+        }
+
+        #about video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+
+        #about .content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 800px;
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #38bdf8;
+        }
+
+        #about p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        .skill {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .skill:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -306,13 +357,26 @@
     <div class="home-content">
         <div class="home-text" style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding-right: 2rem; padding-top: 15rem; padding-left: 10rem">
             <h1>Bienvenido</h1>
-            <p>Mi nombre es <b>Gabriel</b>, soy un desarrollador junior en busca de seguir desarrollándome en un entorno profesional.</p>
+            <p>Mi nombre es <b>Gabriel</b>, soy un desarrollador web junior en busca de seguir desarrollándome en un entorno profesional.</p>
             <p>Conoce aquí proyectos que iré desarrollando, habilidades que he aprendido y cómo puedo contribuir a tu equipo o proyecto.</p>
             <a href="#projects" style="max-width: 14rem;">Explorar Proyectos</a>
         </div>
         <div class="home-image" style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding-right: 2rem; padding-top: 15rem; padding-left: 10rem width:100%;">
             <img src="./img/dev-scaled.jpeg" alt="Imagen relacionada con tecnología">
         </div>
+    </div>
+</section>
+
+<section id="about">
+    <video autoplay muted loop>
+        <source src="./img/small.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    <div class="content">
+        <h2>Sobre mí</h2>
+        <p>Desarrollador Fullstack con experiencia en desarrollo web.</p><br>
+        <p>Actualmente, continúo mi formación en tecnologías web y busco expandir mis conocimientos en cloud también, profundizando en arquitectura en la nube mientras me preparo para la certificación AZ-104.</p><br><br>
+        <p>A través de este portafolio estoy desarrollando proyectos para seguir ampliando y expandiendo mis conocimientos en el ámbito web.</p><br>
     </div>
 </section>
 
@@ -342,7 +406,7 @@
 
 <section id="skills-contact" style="margin-bottom:-15rem;">
     <h2 style="margin-top:-15rem; margin-bottom:8rem;">Habilidades</h2>
-    <div class="skills-grid">
+    <div class="skills-grid" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
         <div class="col-md-3 col-6 skill">
             <img src="./img/descargajs.png" alt="JavaScript Logo" class="img-fluid" style="max-width: 60px;">
             <p>JavaScript</p>
@@ -382,17 +446,18 @@
     </div>
 </section>
 
-<section id="contact">
-    <h2 style="margin-top:-25rem; margin-bottom:8rem;">Contacto</h2>
-    <div class="contact-info">
+<section id="contact" style="padding: 1rem 1rem; margin-bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: auto;">
+    <h2 style="margin: 7rem;">Contacto</h2>
+    <div class="contact-info" style="text-align: center; margin: 0 8rem 12rem;">
         <p>Correo Electrónico: <a href="mailto:gabriel.tureac07@gmail.com">gabriel.tureac07@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/gabriel-tureac-240b97251/">Mi LinkedIn</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/gabriel-tureac07/">Mi LinkedIn</a></p>
         <p><a href="./GT-CV_Res.pdf" download>Ver CV</a></p>
     </div>
 </section>
 
-<footer>
+<footer style="padding: 0.5rem 0; margin: 0; text-align: center; background: #0f172a;">
     &copy; 2025 El portafolio de Gabriel
 </footer>
+
 </body>
 </html>
