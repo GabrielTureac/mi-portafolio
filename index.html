@@ -17,7 +17,9 @@
             color: #fff;
             overflow-x: hidden;
         }
-
+        html {
+            scroll-padding-top: 100px;
+        }
         header {
             position: fixed;
             top: 0;
@@ -60,6 +62,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            scroll-margin-top: 6rem;
         }
 
         #home {
@@ -104,6 +107,8 @@
         #projects {
             background-color: #181818;
             padding: 6rem 2rem;
+            scroll-margin-top: 6rem;
+            padding-top: 8rem;
         }
 
         #projects h2 {
@@ -339,36 +344,186 @@
             transform: scale(1.1);
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
         }
+        @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1rem;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        header h1 {
+            font-size: 1.2rem;
+        }
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+    @media (max-width: 768px) {
+        #home {
+            flex-direction: column;
+            padding: 4rem 1.5rem;
+            height: auto;
+            text-align: center;
+        }
+
+        .home-content {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 0;
+            gap: 3rem;
+        }
+
+        .home-text {
+            width: 100%;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        .home-text h1 {
+            font-size: 2.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .home-text p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .home-text a {
+            font-size: 1.1rem;
+            padding: 1rem 2.5rem;
+        }
+
+        .home-image {
+            width: 100%;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .home-image img {
+            width: 90%;
+            max-width: 350px;
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+    }
+    @media (max-width: 768px) {
+        .project-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            padding: 1.5rem;
+        }
+    }
+    #projects {
+        padding: 4rem 1rem;
+        text-align: center;
+    }
+
+    .project-card {
+        margin: 0 auto;
+        max-width: 90%;
+    }
+    .anchor-fix::before {
+    content: "";
+    display: block;
+    height: 80px;
+    margin-top: -80px;
+    visibility: hidden;
+    pointer-events: none;
+    }
+    @media (max-width: 768px) {
+    .home-text, .home-image {
+        padding: 1rem;
+        width: 100%;
+    }
+    .home-text {
+        padding-left: 8rem !important;
+        padding-right: 1rem !important;
+        text-align: center;
+    align-items: center;
+    }
+
+    .home-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-left: -8rem;
+        padding: 0rem;
+        width: -50rem;
+    }
+    .home-text h1 {
+        text-align: center;
+    }
+    .home-image img {
+    width: 100%;
+    height: auto;
+    margin-top: -10rem;
+    object-fit: cover;
+    }
+
+    }
+    @media (max-width: 768px) {
+        #about h2, #projects h2, #skills-contact h2, #contact h2 {
+        margin-top: 0 !important;
+    }
+    }
+    @media (max-width: 768px) {
+    #skills-contact {
+        margin-bottom: 0 !important;
+    }
+    }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<header>
-    <h1>El portafolio de Gabriel</h1>
-    <nav>
-        <a href="#home">Inicio</a>
-        <a href="#projects">Proyectos</a>
-        <a href="#skills-contact">Habilidades</a>
-        <a href="#contact">Contacto</a>
-        <a href="/mi-portafolio/img/_GT-CV_.pdf" download style="color:#38bdf8;font-weight: bold;">Descargar CV</a>
-    </nav>
-</header>
+    <header>
+        <h1>El portafolio de Gabriel</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav id="main-nav">
+            <a href="#home">Inicio</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#skills-contact">Habilidades</a>
+            <a href="#contact">Contacto</a>
+            <a href="/mi-portafolio/img/_GT-CV_.pdf" download style="color:#38bdf8;font-weight: bold;">Descargar CV</a>
+        </nav>
+    </header>
 
-<section id="home">
+<section id="home" class="anchor-fix">
     <div class="home-content">
         <div class="home-text" style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding-right: 2rem; padding-top: 15rem; padding-left: 10rem">
             <h1>Bienvenido</h1>
-            <p>Mi nombre es <b>Gabriel</b>, soy un desarrollador web junior en busca de seguir desarrollándome en un entorno profesional.</p>
+            <p>Mi nombre es <b>Gabriel</b>, soy desarrollador web junior fullstack y con motivación por crecer en entornos profesionales dinámicos.</p>
             <p>Conoce aquí proyectos que iré desarrollando, habilidades que he aprendido y cómo puedo contribuir a tu equipo o proyecto.</p>
             <a href="#projects" style="max-width: 14rem;">Explorar Proyectos</a>
         </div>
-        <div class="home-image" style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding-right: 2rem; padding-top: 15rem; padding-left: 10rem width:100%;">
+        <div class="home-image" style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding-right: 2rem; padding-top: 15rem; padding-left: 10rem; width:100%;">
             <img src="./img/dev-scaled.jpeg" alt="Imagen relacionada con tecnología">
         </div>
     </div>
 </section>
 
-<section id="about">
+<section id="about" class="anchor-fix">
     <video autoplay muted loop>
         <source src="./img/small.mp4" type="video/mp4">
         Tu navegador no soporta videos.
@@ -376,12 +531,11 @@
     <div class="content">
         <h2>Sobre mí</h2>
         <p>Desarrollador Fullstack con experiencia en desarrollo web.</p><br>
-        <p>Actualmente, continúo mi formación en tecnologías web y busco expandir mis conocimientos en cloud también, profundizando en arquitectura en la nube mientras me preparo para la certificación AZ-104 de Azure.</p><br><br>
-        <p>A través de este portafolio estoy desarrollando proyectos para seguir ampliando y expandiendo mis conocimientos en el ámbito web.</p><br>
+        <p>A través de este portafolio estoy desarrollando proyectos para seguir ampliando mis conocimientos en tecnologías modernas y prácticas de desarrollo eficientes.</p><br>
     </div>
 </section>
 
-<section id="projects">
+<section id="projects" class="anchor-fix">
     <h2 style="margin-bottom:5rem; margin-top:-10rem;">Proyectos</h2>
     <div class="project-grid">
         <div class="project-card">
@@ -401,10 +555,6 @@
             <p>Un juego de preguntas y respuestas donde los jugadores pueden poner a prueba sus conocimientos en diversas categorías.</p>
             <p><b>Tecnologías:</b> HTML, CSS, JavaScript.</p>
             <a href="https://gabrieltureac.github.io/trivia/" target="_blank">Ver Proyecto</a>
-        </div>
-        <div class="project-card">
-            <br><h3>Página web e-commerce.</h3>
-            <h3>En proceso...</h3>
         </div>
     </div>
 </section>
@@ -448,6 +598,10 @@
             <img src="./img/descargawp.png" alt="WordPress Logo" class="img-fluid" style="max-width: 60px;">
             <p>WordPress</p>
         </div>
+        <div class="col-md-3 col-6 skill">
+            <img src="./img/yii3_sign.jpg" alt="Yii2 Logo" class="img-fluid" style="max-width: 60px;">
+            <p>Yii2</p>
+        </div>
     </div>
 </section>
 
@@ -464,5 +618,10 @@
     &copy; 2025 El portafolio de Gabriel
 </footer>
 
+<script>
+    function toggleMenu() {
+        document.getElementById('main-nav').classList.toggle('active');
+    }
+</script>
 </body>
 </html>
